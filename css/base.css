@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    color: var(--text-gray);
+    text-decoration: none;
+}
+
+:root {
+    --light-gray: #fafafa;
+    --gray: #E5E5E8;
+    --text-gray: #6A6A6A;
+    --white: #fff;
+    --black: #000;
+    --light-border: 1px solid #e5e5e8;
+}
+
+.text-sm {
+    font-size: 14px;
+}
+
+.text-md {
+    font-size: 1rem;
+}
+
+.text-md-b {
+    font: 700 1rem "Space Grostek", monospace;
+    color: var(--black);
+}
+
+.text-xxl {
+    font: 700 3rem "Space Grostek", monospace;
+    color: var(--black);
+}
+
+.text-heading {
+    font-family: "Grostek", monospace;
+    color: var(--black);
+}
+
+.icon {
+    height: 40px;
+    cursor: pointer;
+}
+
+.btn-main {
+    padding: 0.5rem 1.5rem ;
+    color: var(--white);
+    background: var(--black);
+    border-radius: 5px;
+}
+
+.btn-main:hover {
+    opacity: 0.9;
+}
+
+/**
+ * Header
+*/
+
+header {
+    width: 100%;
+    position: fixed;
+    background-color: #fafaface;
+    border-bottom: var(--light-border);
+    backdrop-filter: blur(20px);
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+
+}
+
+header > div.header-links > .text-sm {
+    color: var(--black);
+    margin: 0 0.5rem;
+}
+
+header > div.header-links > .text-sm:hover {
+    text-decoration: underline;
+}
+
+header > div.hamburger {
+    display: none;
+    margin: 0.5rem 0 0 1rem;
+    cursor: pointer;
+}
+
+/**
+ * Nav Mobile
+ */
+nav.nav-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--light-gray);
+    padding: 3rem 5rem 3rem;
+    z-index: 100;
+    position: fixed;
+    transform: translateX(100vw);
+    transition: transform .2s ease-in-out;
+}
+
+nav.nav-mobile.active {
+    transform: translateX(0);
+}
+
+nav.nav-mobile .text-xxl:hover {
+    opacity: .85;
+    margin-bottom: 0.5rem;
+}
+
+nav.nav-mobile .close {
+    cursor: pointer;
+}
+
+ /**
+  * Media Queries
+  */
+
+@media (max-width: 768px) {
+    header > div.header-links {
+        display: none;
+    }
+
+    header > div.header-logo {
+        flex: 2;
+    }
+
+    header > div.hamburger {
+        display: block;
+    }
+}
+
+@media (max-width: 460px) {
+    header > div.header-btn {
+        display: none;
+    }
+}
